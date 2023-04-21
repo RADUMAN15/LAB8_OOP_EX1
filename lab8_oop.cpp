@@ -41,11 +41,15 @@ int main()
 		perechi[wrd]++;
 	}
 	priority_queue<pair<string,int>, vector<pair<string, int>>, Compare> out;
-	/*for (it = perechi.begin(); it != perechi.end(); it++)
-		out.push(perechi[it]); // DC NU POT SA FAC ASTA ? si pot ce e mia jos ? */
-
-	for (const auto& pair : perechi)	//dc imi trebuie adresa acolo ? 
-		out.push(pair);
+	for (it = perechi.begin(); it != perechi.end(); it++)
+	{
+		pair<string, int> aux;
+		aux.first = it->first;
+		aux.second = it->second;
+		out.push(aux); // DC NU POT SA FAC ASTA ? si pot ce e mia jos ? */ -> pot da eu prost...
+	}
+	//for (const auto& pair : perechi)	//dc imi trebuie adresa acolo ? 
+	//	out.push(pair);
 
 	while (!out.empty()){
 		cout << out.top().first << ' ' << out.top().second << endl;
